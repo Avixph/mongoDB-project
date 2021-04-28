@@ -1,6 +1,7 @@
 const db = require("./db");
 const Employee = require("./models/employee");
 const faker = require("faker");
+const employee = require("./models/employee");
 
 db.on("error", console.error.bind(console, "MongoDB Connection Error!"));
 
@@ -58,12 +59,29 @@ const deleteEmployee = async () => {
   console.log("Employee deleted!", employee);
 };
 
+const employeeList = async () => {
+  const employees = await Employee.find().select("first_name last_name");
+  //   await Employee.find(
+  //   // {},
+  //   // { first_name: 1, last_name: 1 }
+  //   { first_name: 1, last_name: 1 },
+  //   "first_name last_name",
+  //   function (err, docs) {}
+  // );
+  console.log(
+    "Employees listed by first and last name!",
+    employees,
+    `full names: ${employees.first_name} ${employees.last_name}`
+  );
+};
+
 const run = async () => {
   await findAll();
   // await CreateOneEmployee();
   // await CreateThreeEmployees();
   // await updateEmployee();
   // await deleteEmployee();
+  await employeeList();
   process.exit();
 };
 
