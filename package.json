@@ -1,0 +1,12 @@
+{
+  "name": "mongodb-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Avixph/mongoDB-project.git",
+  "author": "Angel B. Fernandez <25628695+Avixph@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "mongoose": "^5.12.6"
+  }
+}
