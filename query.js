@@ -61,17 +61,10 @@ const deleteEmployee = async () => {
 
 const employeeList = async () => {
   const employees = await Employee.find().select("first_name last_name");
-  //   await Employee.find(
-  //   // {},
-  //   // { first_name: 1, last_name: 1 }
-  //   { first_name: 1, last_name: 1 },
-  //   "first_name last_name",
-  //   function (err, docs) {}
-  // );
   console.log(
     "Employees listed by first and last name!",
-    employees,
-    `full names: ${employees.first_name} ${employees.last_name}`
+    employees
+    // `full names: ${employees.first_name} ${employees.last_name}`
   );
 };
 
