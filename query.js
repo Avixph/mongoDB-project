@@ -1,7 +1,6 @@
 const db = require("./db");
 const Employee = require("./models/employee");
 const faker = require("faker");
-const employee = require("./models/employee");
 
 db.on("error", console.error.bind(console, "MongoDB Connection Error!"));
 
